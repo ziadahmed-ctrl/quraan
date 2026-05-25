@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with role and group mapping",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth user ID"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["Guest", "GroupSupervisor", "GeneralSupervisor"],
+          "description": "User role: Guest, GroupSupervisor, GeneralSupervisor"
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Name of the group supervised (for GroupSupervisor)"
+        }
+      },
+      "required": ["uid", "role"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Quran school student profile",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique student identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Student fullname"
+        },
+        "age": {
+          "type": "number",
+          "description": "Student age in years"
+        },
+        "supervisorId": {
+          "type": "string",
+          "description": "UID of the supervisor overseeing this student"
+        }
+      },
+      "required": ["id", "name", "age", "supervisorId"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Daily attendance and Quran memorization log",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique attendance record ID"
+        },
+        "studentId": {
+          "type": "string",
+          "description": "Referenced Student identification"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Attendance date (YYYY-MM-DD)"
+        },
+        "oldMemorization": {
+          "type": "string",
+          "description": "Range of review surah/verses"
+        },
+        "newMemorization": {
+          "type": "string",
+          "description": "Range of new memorized surah/verses"
+        },
+        "rating": {
+          "type": "number",
+          "description": "Daily recitation evaluation score from 1 to 10"
+        },
+        "supervisorId": {
+          "type": "string",
+          "description": "Copies student's supervisorId for fast group-level reads"
+        }
+      },
+      "required": ["id", "studentId", "date", "oldMemorization", "newMemorization", "rating", "supervisorId"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Collection of user registration roles"
+    },
+    "students/{studentId}": {
+      "schema": "Student",
+      "description": "Quran students database"
+    },
+    "attendance/{attendanceId}": {
+      "schema": "Attendance",
+      "description": "Daily memorization evaluation log index"
+    }
+  }
+}

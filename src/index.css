@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ==========================================================================
+   PERSISTENT FLAT LIGHT MODE STYLING OVERRIDES (Applied when .dark is NOT on html)
+   ========================================================================== */
+
+html:not(.dark) {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) .min-h-screen,
+html:not(.dark) div.min-h-screen {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header & Sidebar Panels */
+html:not(.dark) header,
+html:not(.dark) .bg-\[\#0a0f13\],
+html:not(.dark) .bg-\[\#030608\],
+html:not(.dark) div.bg-\[\#0a0f13\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Dynamic Cards, Sections, Tables & Forms Row Blocks */
+html:not(.dark) section,
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-[#0a0f13],
+html:not(.dark) div.bg-slate-900,
+html:not(.dark) div.bg-\[\#0a0f13\],
+html:not(.dark) .bg-slate-950\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Inputs, Textareas, Select Menus */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea,
+html:not(.dark) .bg-\[\#121a21\],
+html:not(.dark) .bg-\[\#121920\],
+html:not(.dark) div.bg-\[\#121a21\] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Custom Selection Options resetting */
+html:not(.dark) select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Modals & Dialog backdrop overlays styled with rich transparency */
+html:not(.dark) .bg-black\/85,
+html:not(.dark) div.bg-black\/85 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Typography, Headings and Active Status Colors */
+html:not(.dark) .text-white,
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) label,
+html:not(.dark) span.text-white {
+  color: #0f172a !important;
+}
+
+/* Sub-text and muted information colors */
+html:not(.dark) .text-slate-100 { color: #1e293b !important; }
+html:not(.dark) .text-slate-200 { color: #334155 !important; }
+html:not(.dark) .text-slate-300 { color: #475569 !important; }
+html:not(.dark) .text-slate-400 { color: #64748b !important; }
+
+/* Borders and lines overrides */
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-750,
+html:not(.dark) .border-slate-850,
+html:not(.dark) .border-emerald-950,
+html:not(.dark) div.border-slate-800 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Specific buttons adjustment for toggling state cleanly */
+html:not(.dark) button.bg-slate-900,
+html:not(.dark) button.bg-slate-950\/60 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+  
+  &:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+}
+
+/* Tab indicator labels */
+html:not(.dark) .text-slate-350 {
+  color: #334155 !important;
+}
+
+/* Interactive custom indicators */
+html:not(.dark) .border-slate-850 {
+  border-color: #cbd5e1 !important;
+}
+html:not(.dark) .bg-emerald-950\/40 {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+}
+html:not(.dark) .bg-\[\#121a21\] {
+  background-color: #f1f5f9 !important;
+}

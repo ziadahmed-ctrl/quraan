@@ -1,0 +1,6 @@
+{
+  "name": "Sakinah Tracker",
+  "description": "نظام تتبع وتحليل دقيق لحفظ ومراجعة القرآن الكريم للطلاب، معزز بالتحليلات المتطورة والمساعد الذكي المستند إلى نماذج جمناي",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper to check if user is signed in
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Allow full read access for seamless UI lists and guest interactions
+    match /users/{userId} {
+      allow read, get, list: if true;
+      allow write, create, update, delete: if true;
+    }
+
+    match /students/{studentId} {
+      allow read, get, list: if true;
+      allow write, create, update, delete: if true;
+    }
+
+    match /attendance/{attendanceId} {
+      allow read, get, list: if true;
+      allow write, create, update, delete: if true;
+    }
+
+    match /test/{testId} {
+      allow read, write: if true;
+    }
+  }
+}
